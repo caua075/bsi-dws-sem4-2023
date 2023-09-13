@@ -1,0 +1,34 @@
+table, th, td{
+    border: 1px solid black;
+}
+
+#tr1{
+    background-color: green;
+}
+
+.tr1{
+    background-color: white;
+}
+
+.tr2{
+    background-color: lightgreen;
+}
+
+
+#tab2{
+    background-color: black;
+}
+#tr2{
+    color: white;
+    background-color: grey;
+}
+
+.tr3{
+    color: white;
+    background-color: black;
+}
+
+.tr4{
+    color: white;
+    background-color: darkgray;
+}

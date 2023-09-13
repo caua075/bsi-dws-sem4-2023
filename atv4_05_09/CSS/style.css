@@ -1,0 +1,43 @@
+body{
+    background-color: aliceblue;
+}
+
+.classe1{
+    background-color: aquamarine;
+}
+
+.classe2{
+    background-color: salmon;
+}
+
+.spanVerm{
+    color: red;
+}
+
+.spanAzul{
+    color: blue;
+}
+
+.verdCla{
+    background-color: lightgreen;
+}
+
+.verd{
+    background-color: green;
+}
+
+.verdEsc{
+    background-color: darkgreen;
+}
+
+.vermEsc{
+    background-color: firebrick;
+}
+
+.verm{
+    background-color: red;
+}
+
+.vermMais{
+    background-color: rgb(139, 0, 0);
+}

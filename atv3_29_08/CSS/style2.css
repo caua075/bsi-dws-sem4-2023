@@ -1,0 +1,34 @@
+table, td{
+    border: 1px solid red;
+}
+#tabCR td{
+    padding: 30px 60px;
+    text-align: center;
+}
+
+#linha1{
+    background-color: green;
+}
+#linha2{
+    background-color: red;
+}
+#linha3{
+    background-color: blue;
+}
+#linha4{
+    background-color: yellow;
+}
+
+#linhaMeio1{
+    background-color: green;
+}
+#linhaMeio2{
+    background-color: red;
+}
+#linhaMeio3{
+    background-color: blue;
+}
+#linhaMeio4{
+    background-color: yellow;
+}
+

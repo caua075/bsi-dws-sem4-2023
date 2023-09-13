@@ -1,0 +1,25 @@
+.legenda{
+    font-size: 10pt;
+}
+
+body{
+    background-image: radial-gradient(circle at 50% -20.71%, 
+    #ade5ff 0, #7dcefb 25%, #3cb5f2 50%, #009ce9 75%, #0085e0 100%);
+}
+
+#divsec1{
+    padding: 1% 10% 2% 10%;
+    margin: 0% 9% 0% 9%;
+    text-align: justify;
+    background-color: white;
+    border-radius: 2ch;
+}
+
+#imgVoltar{
+    width: 4%;
+    margin: 0% 0% 0% -15%;
+}
+
+.img{
+    text-align: center;
+}
