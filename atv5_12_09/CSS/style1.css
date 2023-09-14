@@ -5,7 +5,7 @@
 #sec2{
     color: blue;
     background-color: #808080;
-    background-image: url(/atv5_12_09/img/gato.png);
+    background-image: url(img/gato.png);
     background-size: 2.4%;
 }
 
@@ -16,7 +16,7 @@
 
 body{
     background-color: lightblue;
-    background-image: url(/atv5_12_09/img/gato.png);
+    background-image: url(img/gato.png);
     background-repeat: no-repeat;
     background-size: 60%;
     background-position: 146% bottom;

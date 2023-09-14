@@ -12,14 +12,14 @@ table, th, td{
 }
 
 body{
-    background-image: url(/atv5_12_09/img/paleta.png);
+    background-image: url(img/paleta.png);
     background-size: 7%;
     background-repeat: repeat-x;
     background-position-y: 177%;
 }
 
 #imgLogo{
-    background-image: url(/atv5_12_09/img/logoIF.png);
+    background-image: url(img/logoIF.png);
     background-repeat: no-repeat;
     background-size: 10%;
     background-position: right;
