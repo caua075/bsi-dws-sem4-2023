@@ -1,0 +1,72 @@
+.sec1{
+    background-color: lightgreen;
+}
+
+.subTit{
+    text-decoration: underline;
+    font-size: 16pt;
+}
+
+.prop{
+    background-color: antiquewhite;
+}
+
+/*Div de cores*/
+#p1div1{
+    color: darkred;
+}
+#p2div1{
+    color: red;
+}
+#p3div1{
+    color: tomato;
+}
+
+/*Div de Alinhamento*/
+#p1div2{
+    text-align: left;
+}
+#p2div2{
+    text-align: center;
+}
+#p3div2{
+    text-align: right;
+}
+#p4div2{
+    text-align: justify;
+}
+
+/*Div de Decoração*/
+#p1div3{
+    text-decoration: line-through;
+}
+#p2div3{
+    text-decoration: underline;
+}
+
+/*Div de Transformação*/
+#p1div4{
+    text-transform: capitalize;
+}
+#p2div4{
+    text-transform: uppercase;
+}
+
+/*Div de Identação*/
+#p1div5{
+    text-indent: 2vw;
+}
+#p2div5{
+    text-indent: 5vw;
+}
+
+/*Div de espaçamento entre linhas*/
+#p1div6{
+    line-height: normal;
+}
+#p2div6{
+    line-height: 3vh;
+}
+#p3div6{
+    line-height: 5vh
+}

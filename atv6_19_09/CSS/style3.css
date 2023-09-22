@@ -1,0 +1,17 @@
+.div1{
+    background-color: lightblue;
+    border-right: solid 1.5vw darkcyan;
+    border-bottom: solid 1vh darkblue;
+    width: 95%;
+}
+
+.divImg{
+    width: 90%;
+    margin-top: 1vh;
+    margin-left: 1vw;
+    border: dotted lightseagreen 2vh;
+}
+
+#img{
+    border: double darkcyan 2vh;
+}

@@ -1,0 +1,43 @@
+.div1{
+    background-color: lightgreen;
+    border-top: solid  20px darkblue;
+    border-bottom: solid  20px darkblue;
+    font-family: Lobster;
+    text-decoration: bolder;
+    font-size: 16pt;
+}
+
+.div2{
+    margin-top: 1vh;
+    background-color: lightcoral;
+    border-top: solid  20px darkred;
+    border-bottom: solid  20px darkred;
+    text-align: right;
+    font-family: Lobster;
+    font-size: 16pt;
+    text-decoration: bolder;
+}
+
+.div1 .imgGrande, h2{
+    margin-left: 2vh;
+}
+
+.div2 .imgGrande, h2{
+    margin-right: 2vh;
+}
+
+.imgGrande{
+    width: 30%;
+}
+
+.imgMeGrande{
+    width: 25%;
+}
+
+.imgMedia{
+    width: 20%;
+}
+
+.imgPeq{
+    width: 10%;
+}
