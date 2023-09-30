@@ -1,0 +1,62 @@
+#divQ1{
+    margin-left: 1vw;
+    float: inline-end;
+    background-color: green;
+    width: 5vw;
+    height: 5vw;
+}
+#divQ2{
+    margin-left: 1vw;
+    float: inline-end;
+    background-color: green;
+    width: 5vw;
+    height: 5vw;
+}
+#divQ3{
+    margin-left: 1vw;
+    float: inline-end;
+    background-color: green;
+    width: 5vw;
+    height: 5vw;
+}
+
+#divR1{
+    clear: both;
+    background-color: green;
+    width: 20vw;
+    height: 5vw;
+}
+#divR2{
+    margin-left: 21vw;
+    background-color: green;
+    width: 20vw;
+    height: 5vw;
+}
+
+#divR3{
+    clear: both;
+    float: inline-end;
+    margin-top: 1vw;
+    background-color: green;
+    width: 5vw;
+    height: 20vw;
+}
+#divR4{
+    margin-right: 1vw;
+    float: inline-end;
+    margin-top: 1vw;
+    background-color: green;
+    width: 5vw;
+    height: 20vw;
+}
+
+#divR5{
+    margin-top: 1vw;
+    background-color: green;
+    width: 5vw;
+    height: 20vw;
+}
+
+body{
+    margin: 2%;
+}
