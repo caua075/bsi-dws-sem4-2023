@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Montserrat:wght@200&display=swap');
+
+/*--------div Header--------*/
+.links{
+    display: flex;
+    justify-content: space-around;
+    padding: 2%;
+}
+
+.dHeader{
+    font-size: x-large;
+    background-color: rgb(178, 245, 182);
+}
+
+/*--------div Body--------*/
+
+.dBody{
+    font-family: 'Abel', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    height: 40%;
+    background-color: white;
+    justify-items: flex-start;
+}
+
+#nameDiv{
+    padding: 1%;
+    border: solid 0.5vh  rgb(14, 165, 25);
+}
+
+.divLateral{
+    padding: 2vw;
+    text-indent: 1vw;
+    width: 20%;
+    border: solid 0.5vh  rgb(14, 165, 25);
+    text-align: justify;
+}
+.divLateral h2{
+    text-align: center;
+}
+
+.divBlocks{
+    display: flex;
+    justify-content: baseline;
+    width: 90%;
+    flex-flow: row wrap;
+}
+.block{
+    width: 7.13vw;
+    height: 5vw;
+    margin: 2%; 
+    border: 0.2vh solid black;
+    font-size: x-large;
+    text-align: center;
+    line-height: 2vh;
+}
+
+/*--------div Footer--------*/
+.dFooter{
+    font-family: 'Courier New';
+    text-align: center;
+    background-color: rgb(178, 245, 182);
+    height: 3vw;
+}
