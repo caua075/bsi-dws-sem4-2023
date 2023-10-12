@@ -50,10 +50,9 @@
     width: 7.13vw;
     height: 5vw;
     margin: 2%; 
+    font-size: 120%;
     border: 0.2vh solid black;
-    font-size: x-large;
     text-align: center;
-    line-height: 2vh;
 }
 
 /*--------div Footer--------*/
