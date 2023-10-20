@@ -1,0 +1,31 @@
+.form{
+    font-size: large;
+    background-color: white;
+    display: flex;
+    width: 60%;
+    height: 65vh;
+    padding: 3%;
+}
+
+label, input, select{
+    font-size: large;
+    margin: 1%;
+}
+
+button{
+    font-size: large;
+}
+
+h1{
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+    font: bold;
+}
+
+body{
+    margin-left: 25%;
+    background-color: cadetblue;
+}

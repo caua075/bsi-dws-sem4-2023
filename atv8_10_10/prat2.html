@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style2.css">
+    <title>Praticando 2</title>
+</head>
+<body>
+    <a href="index.html">
+        <img style="width: 2%" src="../atv1_15_08/img/voltar.png" alt="voltar" id="imgVoltar"/>
+      </a>
+
+      <div class="form">
+      <form>
+        <h1>Praticando 2 - Formulários HTML Estilizado</h1>
+
+        <label for="name">Nome: </label>
+        <input type="text" id="name" name="name" value="Caua"/> <br>
+        <label for="email">Email: </label>
+        <input type="email" id="email" name="email" placeholder="example@gmail.com"/><br>
+        
+        <label for="disp">Marque o dispositivo que mais gosta:</label>
+        <select name="disp" id="disp">
+          <option value="Desktop">Desktop</option>
+          <option value="Notebook">NoteBook</option>
+          <option value="Celular">Celular</option>
+        </select><br>
+  
+        <label for="observ">Observações</label>
+        <textarea name="observ" id="observ" cols="40" rows="4"></textarea> <br><br>
+  
+        <label for="dif_web">Maior dificuldade na programação WEB 1: </label>
+        <input type="radio" id="html" name="dif_web" value="HTML">
+        <label for="html"><img src="IMG/imgHtml.png" alt="html" width="7%"></label>
+        <input type="radio" id="css" name="dif_web" value="CSS">
+        <label for="css"><img src="IMG/css-logo.png" alt="css" width="4.5%"></label>
+        <input type="radio" id="js" name="dif_web" value="JavaScript">
+        <label for="js"><img src="IMG/logoJs.png" alt="javascript" width="11%"></label> <br><br>
+  
+        <label for="fav_lang">Selecione sua(s) Linguagens WEB favorita:</label> <br>
+        <input type="checkbox" id="html" name="fav_lang" value="HTML">
+        <label for="html"><a href="https://www.w3schools.com/html/" target="_blank">HTML</a></label> <br>
+        <input type="checkbox" id="css" name="fav_lang" value="CSS">
+        <label for="html"><a href="https://www.w3schools.com/css/" target="_blank">CSS</a></label> <br>
+        <input type="checkbox" id="js" name="fav_lang" value="JavaScript">
+        <label for="js"><a href="https://www.w3schools.com/js/" target="_blank">JavaScript</a></label><br>
+        <input type="checkbox" id="php" name="fav_lang" value="PHP">
+        <label for="php"><a href="https://www.w3schools.com/php/" target="_blank">PHP</a></label> <br><br>
+  
+        <button type="submit" value="submit">Enviar</button>
+        <button type="reset" value="reset">Limpar</button>
+      </form>
+    </div>
+</body>
+</html>
