@@ -1,3 +1,4 @@
+/*Geral*/
 body{
     font-family: 'Roboto', sans-serif;
 }
@@ -41,6 +42,15 @@ header, .navbar{
 .navbar-expand-lg .navbar-nav .nav-link{
     padding: 2%;
 }
+
+/*Corpo*/
+
+
+
+
+
+
+
 
 /*Rodapé*/
 #rodape{

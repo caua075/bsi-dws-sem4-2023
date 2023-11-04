@@ -45,7 +45,22 @@ header, .navbar{
 
 /*Corpo*/
 #info{
-    display: flex;
+    background-color: whitesmoke;
+}
+.titulo{
+    color: #444;
+    text-align: center;
+    font-size: 35px;
+    margin: 0 0 5% 0;
+}
+.titulo::after{
+    content: "";
+    border-top: 4px solid #222;
+    border-radius: 1vh;
+    width: 10%;
+    position: absolute;
+    top: 24%;
+    left: 45%;
 }
 
 /*Rodapé*/
