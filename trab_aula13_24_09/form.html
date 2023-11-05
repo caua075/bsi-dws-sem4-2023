@@ -14,33 +14,16 @@
       <div class="container" id="nav-container">
         <nav class="navbar navbar-expand-lg fixed-top">
           <a href="pgInicial.html" class="navbar-brand">
-            <img
-              id="logo"
-              src="img/Fit Vision.png"
-              alt="logo FitVision Gym"
-            />FIT<span id="corVision"> VISION</span> GYM
+            <img id="logo" src="img/Fit Vision.png" alt="logo FitVision Gym"/>FIT<span id="corVision"> VISION</span> GYM
           </a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbar-links"
-            aria-controls="navbar-links"
-            aria-expanded="false"
-            aria-label="Toogle navigation"
-          >
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-links" aria-controls="navbar-links" aria-expanded="false" aria-label="Toogle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div
-            class="collapse navbar-collapse justify-content-end"
-            id="navbar-links"
-          >
+          <div class="collapse navbar-collapse justify-content-end" id="navbar-links">
             <div class="navbar-nav">
-              <a class="nav-item nav-link" href="pgInicial.html"
-                >Página Inicial</a
-              >
+              <a class="nav-item nav-link" href="pgInicial.html">Página Inicial</a>
               <a class="nav-item nav-link" href="sobre.html">Sobre</a>
-              <a class="nav-item nav-link" href="#form">Cadastro</a>
+              <a class="nav-item nav-link" href="#formulario">Cadastro</a>
               <a class="nav-item nav-link" href="#">Planos e Assinaturas</a>
               <a class="nav-item nav-link" href="#contato">Contato</a>
             </div>
@@ -51,58 +34,168 @@
 
     <div id="formulario">
       <div class="container">
-        <form id="form">
+        <div class="row">
+          <div class="col-md-12">
+            <h2 class="titulo"><i class="bi bi-person-circle"></i> Faça Seu Cadastro Aqui!</h2>
+          </div>
+        <form id="form" class="m-3">
+          <div id="div1Form" class="col-md-12">
+            <div class="col-md-4">
+              <div class="form-group p-3">
+                <label class="label-control" for="nome">Nome Completo:</label>
+                <input type="text" class="form-control" name="nome" id="nome" placeholder="Digite seu nome aqui">
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="form-group p-3">
+                <label for="dtaNasc">Data de Nascimento:</label>
+                <input type="date" class="form-control" name="dtaNasc" id="dtaNasc">
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <div class="form-group p-4">
+                <label for="sexo">Sexo:</label>
+                <div>
+                  <label for="sexo">Masculino</label>
+                  <input type="radio" class="form-check-input" id="masc" name="sexo" value="masculino">
+                  <label for="sexo">Feminino</label>
+                  <input type="radio" class="form-check-input" id="fem" name="sexo" value="feminino">
+                </div>
+              </div>
+            </div>
+          </div>
           
+          <div id="div2Form" class="col-md-12">
+            <div class="col-md-4">
+              <div class="form-group p-3">
+                <label for="email">E-mail:</label>
+                <input type="email" class="form-control" name="email" id="email" placeholder="seu@email.com">
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="form-group p-3">
+                <label for="telefone">Telefone:</label>
+                <input type="tel" class="form-control" name="telefone" id="telefone" placeholder="(XX) XXXXX-XXXX">
+              </div>
+            </div>
+          
+            <div class="col-md-4">
+                <div class="form-group p-3">
+                  <label for="insta">Instagram:</label>
+                  <div id="divInsta" class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon3">https://www.instagram.com/</span>
+                    <input type="text" class="form-control" id="insta" aria-describedby="basic-addon3">
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+          <div id="div3Form" class="col-md-12">
+            <div class="col-md-4">
+              <div class="form-group p-3">
+                <label for="idade">Idade:</label>
+                <input type="number" class="form-control" name="idade" id="idade" placeholder="Digite sua idade">
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="form-group p-3">
+                <label for="objetivo">Objetivo:</label>
+                <select name="objetivo" class="custom-select form-control" id="objetivo">
+                  <option selected>Seleciona seu Objetivo...</option>
+                  <option value="emagrecer">Emagrecer</option>
+                  <option value="hipertrofia">Hipertrofia</option>
+                  <option value="aerobico">Melhoria Aeróbica</option>
+                  <option value="saudeF">Saúde Física</option>
+                  <option value="saudeM">Saúde Mental</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-group p-3">
+                <div id="selMult">
+                  <label for="modalidade">Modalidade:</label>
+                  <div>
+                    <div class="col-md-6 p-0.5">
+                      <input type="checkbox" class="form-check-input" id="musculacao" name="musculacao" value="musculacao">
+                      <label for="musculacao">Musuculação</label>
+                      <input type="checkbox" class="form-check-input" id="hidro" name="hidro" value="hidro">
+                      <label for="hidro">Hidroginástica/Natação</label>
+                    </div>
+                    <input type="checkbox" class="form-check-input" id="funcional" name="funcional" value="funcional">
+                    <label for="funcional">Funcional</label>
+                    <input type="checkbox" class="form-check-input" id="artes" name="artes" value="artes">
+                    <label for="artes">Artes Marciais</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12">
+            <div class="form-group p-3">
+              <label for="observacoes">Observções:</label>
+              <textarea type="textarea" class="form-control" name="observacoes" id="observacoes" rows="5"></textarea>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="form-group p-3">
+              <label for="arquivo">Precedimento Médico:</label>
+              <input lang="pt-br" type="file" class="form-control-file" name="arquivo" id="arquivo">
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="p-3">
+              <button type="submit" value="enviar" class="btn btn-warning">Cadastrar</button>
+              <button type="reset" value="cancelar" class="btn btn-danger">Cancelar</button>
+            </div>
+          </div>
         </form>
+      </div>
       </div>
     </div>
 
-    <footer>
+  <footer>
       <div id="rodape">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12">
-              <h2 class="titulo" id="contato">Contatos</h2>
-            </div>
-            <div class="col-md-4 contact-box">
-              <i class="bi bi-phone-fill"></i>
-              <p>
-                <span class="contact-title">Telefone Celular:</span>
-                (14)99284-7390
-              </p>
-              <p>
-                <span class="contact-title">Telefone Fixo:</span> (14)3008-9026
-              </p>
-              <p><span class="contact-title">Horário: </span> 24:00 hrs</p>
-            </div>
-            <div class="col-md-4 contact-box">
-              <i class="bi bi-envelope-at-fill"></i>
-              <p>
-                <span class="contact-title">Envie um e-mail:</span>
-                recepcao@fitvison.com.br
-              </p>
-            </div>
-            <div class="col-md-4 contact-box">
-              <i class="bi bi-geo-alt-fill"></i>
-              <p>
-                <span class="contact-title">Venha nos conhecer:</span> Rua
-                Mateus Santos, 731 - Botucatu
-              </p>
-            </div>
-            <a id="voltar" href="#formulario">Voltar ao topo</a>
+          <div class="container">
+              <div class="row">
+                  <div class="col-md-12">
+                      <h2 class="titulo" id="contato">Contatos</h2>
+                  </div>
+                  <div class="col-md-4 contact-box">
+                      <i class="bi bi-phone-fill"></i>
+                      <p><span class="contact-title">Telefone Celular:</span> (14)99284-7390</p>
+                      <p><span class="contact-title">Telefone Fixo:</span> (14)3008-9026</p>
+                      <p><span class="contact-title">Horário: </span> 24:00 hrs</p>
+                  </div>
+                  <div class="col-md-4 contact-box">
+                      <i class="bi bi-envelope-at-fill"></i>
+                      <p><span class="contact-title">Envie um e-mail:</span> recepcao@fitvison.com.br</p>
+                  </div>
+                  <div class="col-md-4 contact-box">
+                      <i class="bi bi-geo-alt-fill" ></i>
+                      <p><span class="contact-title">Venha nos conhecer:</span> Rua Mateus Santos, 731 - Botucatu</p>
+                  </div>
+                  <a id="voltar" href="#formulario">Voltar ao topo</a>
+              </div>
           </div>
-        </div>
       </div>
       <div id="copy">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12">
-              <p>Desenvolvido por Cauã de Andrade &copy; 2023</p>
-            </div>
+          <div class="container">
+              <div class="row">
+                  <div class="col-md-12">
+                      <p>Desenvolvido por Cauã de Andrade &copy; 2023</p>
+                  </div>
+              </div>
           </div>
-        </div>
       </div>
-    </footer>
+  </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   </body>
 </html>
