@@ -1,68 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Praticando 3</title>
-
-    <style>
-        body{
-            margin-top: 2%;
-        }
-        h1{
-            margin-left: 3%;
-        }
-        .container{
-            display: flex;
-            margin-left: 4%;
-        }
-        .caixas{
-            margin-right: 2%;
-            width: 15vw;
-            height: 7vh;
-            border: 4px black solid;
-        }
-        #c1{
-            background-color: red;
-        }
-        #c2{
-            background-color: green;
-        }
-        #c3{
-            background-color: blue;
-        }
-        #c4{
-            background-color: yellow;
-        }
-        #c5{
-            background-color: violet;
-        }
-        button{
-            margin-top: 2%;
-            font-size: x-large;
-            margin-left: 4%;
-            width: 5vw;
-            height: 5vh;
-        }
-    </style>
-</head>
-<body>
-    <div class=" Principal">
+  </head>
+  <style>
+    div > div {
+      width: 15%;
+      height: 4rem;
+      border: 3px solid black;
+    }
+    button {
+      width: 5%;
+      height: 3rem;
+      font-size: 20pt;
+      margin-top: 2rem;
+      margin-left: 9.4rem;
+    }
+    #preview {
+      width: 100%;
+      height: 40rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-style: italic;
+      font-size: 20pt;
+    }
+  </style>
+  <body>
     <a href="index.html">
         <img style="width: 2%" src="../atv1_15_08/img/voltar.png" alt="voltar" id="imgVoltar"/>
-    </a>
-    <h1>Praticando 3 - JavaScript - Cores(click e mouse)</h1>
-
-    <div class="container">
-        <div class="caixas" id="c1"></div>
-        <div class="caixas" id="c2"></div>
-        <div class="caixas" id="c3"></div>
-        <div class="caixas" id="c4"></div>
-        <div class="caixas" id="c5"></div>
+      </a>
+    <h1>Praticando 3 - JavaScript - Cores (click e mouse)</h1>
+    <div style="display: flex; gap: 2rem; justify-content: center">
+      <div
+        id="sections"
+        style="background-color: red; cursor: pointer" 
+        onmouseenter="mudaCor('red', 1)" onmouseleave="mudaCor('red', 2)" onclick="mudaCor('red', 3)"
+      ></div>
+      <div
+        id="sections"
+        style="background-color: green; cursor: pointer"
+        onmouseenter="mudaCor('green', 1)" onmouseleave="mudaCor('green', 2)" onclick="mudaCor('green', 3)"
+      ></div>
+      <div
+        id="sections"
+        style="background-color: blue; cursor: pointer"
+        onmouseenter="mudaCor('blue', 1)" onmouseleave="mudaCor('blue', 2)" onclick="mudaCor('blue', 3)"
+      ></div>
+      <div
+        id="sections"
+        style="background-color: yellow; cursor: pointer"
+        onmouseenter="mudaCor('yellow', 1)" onmouseleave="mudaCor('yellow', 2)" onclick="mudaCor('yellow', 3)"
+      ></div>
+      <div
+        id="sections"
+        style="background-color: purple; cursor: pointer"
+        onmouseenter="mudaCor('purple', 1)" onmouseleave="mudaCor('purple', 2)" onclick="mudaCor('purple', 3)"
+      ></div>
     </div>
-    <div>
-        <button type="reset" id="reset" onclick="">Reset</button>
+    <button style="cursor: pointer;" onclick="mudaCor('white', 3)">Reset</button>
+    <div id="preview">
+      <p></p>
     </div>
-</div>
-</body>
+  </body>
+  <script>
+    cor_base = "white";
+    function mudaCor(cor, opcao){
+        if (opcao == 1){
+            document.body.style.backgroundColor = cor;
+            document.getElementById("preview").innerText = "Preview";
+        } else if (opcao == 2) {
+            document.body.style.backgroundColor = cor_base;
+            document.getElementById("preview").innerText = "";
+        } else {
+            cor_base = cor;
+            document.body.style.backgroundColor = cor_base;
+            document.getElementById("preview").innerText = "";
+        }
+    }
+  </script>
 </html>
