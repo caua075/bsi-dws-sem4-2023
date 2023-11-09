@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        color: white;
+        background-color: black;
+    }
+    #Principal{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        align-self: center;
+    }
+
+</style>
+<body>
+    <a href="index.html">
+        <img style="width: 2%; background-color: white; border-radius: 50%;"  src="../atv1_15_08/img/voltar.png" alt="voltar" id="imgVoltar"/>
+    </a>
+    <h1>Praticando 1 - Lâmpada</h1>
+
+    <div id="Principal">
+        <img id="img" src="img/lampada.png" alt="lampada apagada" onmouseenter="acender()" onmouseout="apagar()">
+        <p>Lâmpada Apagada</p>
+    </div>
+
+    <script>
+        function acender(){
+            document.querySelector("p").innerText = "Lâmpada Acesa"
+            document.body.style.backgroundColor = "white";
+            document.body.style.color = "black";
+            document.getElementById("img").src = "img/lampada-acesa.png"
+        }
+        function apagar(){
+            document.querySelector("p").innerText = "Lâmpada Apagada"
+            document.body.style.backgroundColor = "black";
+            document.body.style.color = "white";
+            document.getElementById("img").src = "img/lampada.png"
+        }
+    </script>
+</body>
+</html>
