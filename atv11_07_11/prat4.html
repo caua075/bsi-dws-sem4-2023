@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praticando 4</title>
+</head>
+<style>
+    p{
+        font-size: large;
+    }
+    body{
+        margin: 2%;
+    }
+    #qVerm{
+        margin: 1%;
+        width: 8vw;
+        height: 8vw;
+        background-color: red;
+        border: solid 5px black;
+    }
+    #qAzul{
+        margin: 1%;
+        width: 8vw;
+        height: 8vw;
+        background-color: blue;
+        border: solid 5px black;
+    }
+    #qVerd{
+        margin: 1%;
+        width: 8vw;
+        height: 8vw;
+        background-color: green;
+        border: solid 5px black;
+    }
+    #divP{
+        display: flex;
+    }
+    #img{
+        display: flex;
+        justify-content: center;
+    }
+    #dV{
+        display: flex;
+    }
+    #dA{
+        display: flex;
+    }
+    #dVd{
+        display: flex;
+    }
+    span{
+        height: 0.7vh;
+        background-color: lightyellow;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <h1>Praticando 4 - Mini Game JS</h1>
+        <p><u>Instruções:</u></p>
+        <p>1. Clique em um dos quadrdos coloridos</p>
+        <p>2. Depois use as teclas <span>W</span> <span>A</span> <span>S</span> <span>D</span> para movimentar os elementos para cima, esquerda, baixo e direita respectivamente.</p>
+        <div id="img">
+            <img src="img/wasd.jpg" alt="comandos de movimentação">
+        </div>
+        <div id="divP">
+            <div id="dV">
+                <div id="qVerm" onclick="clicar(1)"></div>
+            </div>
+            <div id="dA">
+                <div id="qAzul" onclick="clicar(2)"></div>
+            </div>
+            <div id="dVd">
+                <div id="qVerd" onclick="clicar(3)"></div>
+            </div>
+        </div>
+    </div>
+
+<script>
+    function clicar(opc){
+        
+    }
+</script>
+</body>
+</html>

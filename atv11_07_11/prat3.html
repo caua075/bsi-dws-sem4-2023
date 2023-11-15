@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        margin: 3%;
+    }
+    #botao{
+        padding: 2%;
+        display: flex;
+    }
+    #btnEsconder{
+        margin-left: 86%;
+    }
+    #meuDiv{
+        background-color: lightblue;
+        text-align: center;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        font-size: 4.5vw;
+        height: 15vh;
+    }
+</style>
+<body>
+    <a href="index.html">
+        <img style="width: 2%; background-color: white; border-radius: 50%;"  src="../atv1_15_08/img/voltar.png" alt="voltar" id="imgVoltar"/>
+    </a>
+    <h1>Praticando 3 - Mostrar/Esconder</h1>
+    <div class="container">
+        <div id="botao">
+            <div id="btnMostrar">
+                <button type="button" id="mostrar" class="btn btn-primary" onclick="acao(1)">Mostrar</button>
+            </div>
+            <div id="btnEsconder">
+                <button type="button" id="esconder" class="btn btn-primary" onclick="acao(2)">Esconder</button>
+            </div>
+        </div>
+        <div id="meuDiv">Meu DIV</div>
+    </div>
+
+<script>
+    function acao(opc){
+        if(opc == 1){
+            document.getElementById("meuDiv").style.display = "flex"
+        }else{
+            document.getElementById("meuDiv").style.display = "none"
+        }
+    }
+</script>
+</body>
+</html>

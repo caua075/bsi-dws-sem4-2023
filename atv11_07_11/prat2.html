@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Title</title>
+  <title>Praticando 2</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,27 +12,76 @@
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 
 </head>
+<style>
+  body{
+    margin: 2%;
+  }
+</style>
 
 <body>
-  <header>
-    <!-- place navbar here -->
-  </header>
-  <main>
-    <form class="container">
-        
+  <a href="index.html">
+    <img style="width: 2%; background-color: white; border-radius: 50%;"  src="../atv1_15_08/img/voltar.png" alt="voltar" id="imgVoltar"/>
+</a>
+  <div class="container">
+    <form id="form" class="was-validated">
+      <div class="col-md-8">
+        <h2 style="text-align: center;" class="titulo">Praticando 2 - Formulário com validações</h2>
+      </div>
+      <div class="row g-3">
+        <div class="col-md-4">
+          <label for="nome" class="form-label">Nome:</label>
+          <input type="text" class="form-control" id="nome" aria-describedby="validarNomeFeedback" required>
+          <div id="validarNomeFeedback" class="invalid-feedback">
+            Preencha com seu nome.
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="email" class="form-label">E-mail:</label>
+          <input type="mail" class="form-control" id="nome" aria-describedby="validarEmailFeedback" required placeholder="seu@email.aqui">
+          <div id="validarEmailFeedback" class="invalid-feedback">
+            Preencha com seu email.
+          </div>
+        </div>
+        <div class="row g-3">
+          <div class="col-md-4">
+            <label for="telefone" class="form-label">E-mail:</label>
+          <input type="tel" class="form-control" id="telefone" aria-describedby="validarTelFeedback" required placeholder="(XX) XXXXX-XXXX">
+          <div id="validarEmailFeedback" class="invalid-feedback">
+            Preencha com seu telefone.
+          </div>
+          </div>
+          <div class="col-md-4">
+            <label for="idade" class="form-label">Idade</label>
+            <select class="form-select" id="idade" aria-describedby="validarIdadeFeedback" required>
+              <option selected disabled value="">Escolha...</option>
+              <option value="0">0 a 9 anos</option>
+              <option value="10">10 a 19 anos</option>
+              <option value="15">20 a 29 anos</option>
+              <option value="18">30 a 39 anos</option>
+              <option value="21">40 ou mais</option>
+            </select>
+            <div id="validarIdadeFeedback" class="invalid-feedback">
+              Selecione uma idade.
+            </div>
+          </div>
+          <div class="row g-3">
+            <div class="col-md-8">
+              <label for="observacoes" class="form-label">Observações</label>
+              <textarea name="observacoes" class="form-control" id="observacoes" cols="6 " rows="3" aria-describedby="validarObservacoesFeedback" required></textarea>
+              <div id="validarObservacoesFeedback" class="invalid-feedback"></div>
+            </div>
+          </div>
+          <div class="row g-3">
+            <div class="col-md-6" id="botoes">
+              <button type="submit" class="btn btn-primary">Enviar</button>
+              <button type="reset" class="btn btn-warning">Limpar</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </form>
-  </main>
-  <footer>
-    <!-- place footer here -->
-  </footer>
-  <!-- Bootstrap JavaScript Libraries -->
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
-  </script>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
-    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
-  </script>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 
 </html>
