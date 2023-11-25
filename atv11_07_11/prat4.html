@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,153 +7,126 @@
     <title>Praticando 4</title>
 </head>
 <style>
-    p{
+    p {
         font-size: large;
     }
-    body{
+
+    body {
         margin: 2%;
     }
-    #red {
-      width: 100px;
-      height: 100px;
-      background-color: red;
-      border: 5px solid black;
-      margin: 10px;
+
+    .quadrado {
+        width: 100px;
+        height: 100px;
+        border: 5px solid black;
+        margin: 10px;
+        cursor: pointer;
     }
 
-    #blue {
-      width: 100px;
-      height: 100px;
-      background-color: blue;
-      border: 5px solid black;
-      margin: 10px;
-    }
-
-    #green {
-      width: 100px;
-      height: 100px;
-      background-color: green;
-      border: 5px solid black;
-      margin: 10px;
-    }
-
-    .blocos {
-      display: flex;
-    }
-    #img{
+    #img {
         display: flex;
         justify-content: center;
     }
-    
-    span{
-        height: 0.7vh;
+
+    span {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
         background-color: lightyellow;
+        margin-right: 5px;
     }
 </style>
 
 <body>
     <div class="container">
+        <a href="index.html">
+            <img style="width: 2%" src="../atv1_15_08/img/voltar.png" alt="voltar" id="imgVoltar"/>
+          </a>  
         <h1>Praticando 4 - Mini Game JS</h1>
         <p><u>Instruções:</u></p>
-        <p>1. Clique em um dos quadrdos coloridos</p>
-        <p>2. Depois use as teclas <span>W</span> <span>A</span> <span>S</span> <span>D</span> para movimentar os elementos para cima, esquerda, baixo e direita respectivamente.</p>
+        <p>1. Clique em um dos quadrados coloridos</p>
+        <p>2. Use as teclas <span>W</span> <span>A</span> <span>S</span> <span>D</span> ou setas para movimentar os elementos</p>
         <div id="img">
             <img src="img/wasd.jpg" alt="comandos de movimentação">
         </div>
         <div class="row">
-            <div id="red" class="sqr" onclick="updateSelected('red')"></div>
-            <div id="blue" class="sqr" onclick="updateSelected('blue')"></div>
-            <div id="green" class="sqr" onclick="updateSelected('green')"></div>
+            <div id="red" style="background-color: red;" class="quadrado" onclick="atualizarSelecionado(this)"></div>
+            <div id="blue" style="background-color: blue;" class="quadrado" onclick="atualizarSelecionado(this)"></div>
+            <div id="green" style="background-color: green;" class="quadrado" onclick="atualizarSelecionado(this)"></div>
         </div>
     </div>
 
 <script>
-let squareSelected = null;
+let quadradoSelecionado = null;
+let quadradoEmMovimento = false;
 
-function updateSelected(squareId) {
-    const square = document.getElementById(squareId);
-
-    if (squareInMovement && squareId === squareSelected.id) {
-        square.style.border = "5px solid yellow";
-        moveParaPosicaoInicial(square);
-        squareInMovement = false;
-        squareSelected = null;
-    } else if (squareInMovement) {
-        alert("Atenção, há algum square Selected, desselecione-o para selecionar outro");
+function atualizarSelecionado(quadrado) {
+    if (quadradoEmMovimento && quadrado === quadradoSelecionado) {
+        resetarQuadrado(quadrado);
+        quadradoEmMovimento = false;
+        quadradoSelecionado = null;
+    } else if (quadradoEmMovimento) {
+        alert("Atenção, há algum quadrado selecionado, desselecione-o para selecionar outro");
     } else {
-        square.style.border = "5px solid yellow";
-        const isSelected = square === squareSelected;
-        const squares = document.querySelectorAll(".sqr");
-        
-        squares.forEach((sqr) => {
-            sqr.style.transform = "translate(0px, 0px)";
-        });
-
-        if (!isSelected) {
-            moveParaCentro(squareId);
-            squareSelected = square;
-            squareInMovement = true;
-        } else {
-            squareSelected = null;
-        }
+        moverParaCentro(quadrado);
+        quadradoSelecionado = quadrado;
+        quadradoEmMovimento = true;
     }
 }
 
-function moveParaPosicaoInicial(square) {
-    square.style.transform = "translate(0px, 0px)";
-    square.style.border = "5px solid black";
+function resetarQuadrado(quadrado) {
+    quadrado.style.transform = "translate(0px, 0px)";
+    quadrado.style.border = "5px solid black";
 }
 
-function moveParaCentro(squareId) {
-    const screen = document.querySelector(".container");
-    const screenWidth = screen.offsetWidth;
-    const screenHeight = screen.offsetHeight;
-    const square = document.getElementById(squareId);
-    const squareWidth = square.offsetWidth;
-    const squareHeight = square.offsetHeight;
-    const newX = (screenWidth - squareWidth) / 2.5;
-    const newY = (screenHeight - squareHeight) / 3;
-    square.style.transform = `translate(${newX}px, ${newY}px)`;
+function moverParaCentro(quadrado) {
+    const tela = document.body;
+    const larguraDaTela = tela.offsetWidth;
+    const alturaDaTela = tela.offsetHeight;
+    const larguraDoQuadrado = quadrado.offsetWidth;
+    const alturaDoQuadrado = quadrado.offsetHeight;
+    const novoX = (larguraDaTela - larguraDoQuadrado) / 2.5;
+    const novoY = (alturaDaTela - alturaDoQuadrado) / 3;
+    quadrado.style.transform = `translate(${novoX}px, ${novoY}px)`;
+    quadrado.style.border = "5px solid yellow";
 }
-
-let squareInMovement = false;
 
 document.addEventListener("keydown", function (event) {
-    if (squareSelected && squareInMovement) {
-        const key = event.key.toLowerCase();
-        switch (key) {
+    if (quadradoSelecionado && quadradoEmMovimento) {
+        const tecla = event.key.toLowerCase();
+        switch (tecla) {
             case "w":
-                moveSquare(0, -10);
+                moverQuadrado(0, -10);
                 break;
             case "a":
-                moveSquare(-10, 0);
+                moverQuadrado(-10, 0);
                 break;
             case "s":
-                moveSquare(0, 10);
+                moverQuadrado(0, 10);
                 break;
             case "d":
-                moveSquare(10, 0);
+                moverQuadrado(10, 0);
                 break;
         }
     }
 });
 
-function moveSquare(deltaX, deltaY) {
-    const transform = getComputedStyle(squareSelected).transform;
-    
-    let currentX = 0;
-    let currentY = 0;
+function moverQuadrado(deltaX, deltaY) {
+    const transformacao = getComputedStyle(quadradoSelecionado).transform;
 
-    if (transform !== "none") {
-        const matrix = new DOMMatrix(transform);
-        currentX = matrix.m41;
-        currentY = matrix.m42;
+    let atualX = 0;
+    let atualY = 0;
+
+    if (transformacao !== "none") {
+        const matriz = new DOMMatrix(transformacao);
+        atualX = matriz.m41;
+        atualY = matriz.m42;
     }
 
-    const newX = currentX + deltaX;
-    const newY = currentY + deltaY;
-    
-    squareSelected.style.transform = `translate(${newX}px, ${newY}px)`;
+    const novoX = atualX + deltaX;
+    const novoY = atualY + deltaY;
+
+    quadradoSelecionado.style.transform = `translate(${novoX}px, ${novoY}px)`;
 }
 </script>
 </body>

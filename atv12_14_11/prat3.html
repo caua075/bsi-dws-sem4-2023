@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praticando 3</title>
+    
+</head>
+<style>
+    body {
+        color: white;
+        background-color: black;
+    }
+
+    #Principal {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        align-self: center;
+    }
+</style>
+<body>
+    <a href="index.html">
+        <img style="width: 2%; background-color: white; border-radius: 50%;"  src="../atv1_15_08/img/voltar.png" alt="voltar" id="imgVoltar"/>
+    </a>
+    <h1>Praticando 3 - Lâmpada</h1>
+
+    <div id="Principal">
+        <img id="img" src="img/lampada.png" alt="lampada apagada">
+        <p>Lâmpada Apagada</p>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            $("#img").on("mouseenter", function () {
+                acender();
+            });
+
+            $("#img").on("mouseout", function () {
+                apagar();
+            });
+
+            function acender() {
+                $("p").text("Lâmpada Acesa");
+                $("body").css({
+                    "background-color": "white",
+                    "color": "black"
+                });
+                $("#img").attr("src", "img/lampada-acesa.png");
+            }
+
+            function apagar() {
+                $("p").text("Lâmpada Apagada");
+                $("body").css({
+                    "background-color": "black",
+                    "color": "white"
+                });
+                $("#img").attr("src", "img/lampada.png");
+            }
+        });
+    </script>
+</body>
+</html>

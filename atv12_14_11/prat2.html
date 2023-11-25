@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Praticando 3</title>
+  <style>
+    div > div {
+      width: 15%;
+      height: 4rem;
+      border: 3px solid black;
+    }
+    button {
+      width: 5%;
+      height: 3rem;
+      font-size: 20pt;
+      margin-top: 2rem;
+      margin-left: 9.4rem;
+    }
+    #preview {
+      width: 100%;
+      height: 40rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-style: italic;
+      font-size: 20pt;
+    }
+  </style>
+</head>
+<body>
+  <a href="index.html">
+    <img style="width: 2%" src="../atv1_15_08/img/voltar.png" alt="voltar" id="imgVoltar"/>
+  </a>
+  <h1>Praticando 2 - JavaScript - Cores (click e mouse)</h1>
+  <div style="display: flex; gap: 2rem; justify-content: center">
+    <div class="sections" style="background-color: red; cursor: pointer"></div>
+    <div class="sections" style="background-color: green; cursor: pointer"></div>
+    <div class="sections" style="background-color: blue; cursor: pointer"></div>
+    <div class="sections" style="background-color: yellow; cursor: pointer"></div>
+    <div class="sections" style="background-color: purple; cursor: pointer"></div>
+  </div>
+  <button style="cursor: pointer;">Reset</button>
+  <div id="preview">
+    <p></p>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(function() {
+      let cor_base = "white";
+
+      $(".sections").on({
+        mouseenter: function() {
+          mudaCor($(this).css("background-color"), 1);
+        },
+        mouseleave: function() {
+          mudaCor(cor_base, 2);
+        },
+        click: function() {
+          mudaCor($(this).css("background-color"), 3);
+        }
+      });
+
+      $("button").on("click", function() {
+        mudaCor("white", 3);
+      });
+
+      function mudaCor(cor, opcao) {
+        if (opcao === 1) {
+          $("body").css("background-color", cor);
+          $("#preview p").text("Preview");
+        } else if (opcao === 2) {
+          $("body").css("background-color", cor_base);
+          $("#preview p").text("");
+        } else {
+          cor_base = cor;
+          $("body").css("background-color", cor_base);
+          $("#preview p").text("");
+        }
+      }
+    });
+  </script>
+</body>
+</html>

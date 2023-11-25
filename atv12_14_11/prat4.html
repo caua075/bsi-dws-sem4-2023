@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha384-GLhlTQ8iK1uOdqLl3t+6U5J-6Uwqszl29+Ol/dJ7fuFNdA2j5+fFO9i1pP6L+2aX" crossorigin="anonymous"></script>
+    <title>Praticando 4</title>
+</head>
+<style>
+    p {
+        font-size: large;
+    }
+
+    body {
+        margin: 2%;
+    }
+
+    .quadrado {
+        width: 100px;
+        height: 100px;
+        border: 5px solid black;
+        margin: 10px;
+        cursor: pointer;
+    }
+
+    #img {
+        display: flex;
+        justify-content: center;
+    }
+
+    span {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background-color: lightyellow;
+        margin-right: 5px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <a href="index.html">
+            <img style="width: 2%" src="../atv1_15_08/img/voltar.png" alt="voltar" id="imgVoltar"/>
+          </a>
+        <h1>Praticando 4 - Mini Game JS</h1>
+        <p><u>Instruções:</u></p>
+        <p>1. Clique em um dos quadrados coloridos</p>
+        <p>2. Use as teclas <span>W</span> <span>A</span> <span>S</span> <span>D</span> ou setas para movimentar os elementos</p>
+        <div id="img">
+            <img src="img/wasd.jpg" alt="comandos de movimentação">
+        </div>
+        <div class="row">
+            <div id="red" style="background-color: red;" class="quadrado"></div>
+            <div id="blue" style="background-color: blue;" class="quadrado"></div>
+            <div id="green" style="background-color: green;" class="quadrado"></div>
+        </div>
+    </div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+<script>
+$(document).ready(function () {
+    let quadradoSelecionado = null;
+    let quadradoEmMovimento = false;
+
+    $(".quadrado").on("click", function () {
+        atualizarSelecionado(this);
+    });
+
+    function atualizarSelecionado(quadrado) {
+        if (quadradoEmMovimento && quadrado === quadradoSelecionado) {
+            resetarQuadrado(quadrado);
+            quadradoEmMovimento = false;
+            quadradoSelecionado = null;
+        } else if (quadradoEmMovimento) {
+            alert("Atenção, há algum quadrado selecionado, desselecione-o para selecionar outro");
+        } else {
+            moverParaCentro(quadrado);
+            quadradoSelecionado = quadrado;
+            quadradoEmMovimento = true;
+        }
+    }
+
+    function resetarQuadrado(quadrado) {
+        $(quadrado).css({
+            transform: "translate(0px, 0px)",
+            border: "5px solid black"
+        });
+    }
+
+    function moverParaCentro(quadrado) {
+        const tela = $("body");
+        const larguraDaTela = tela.width();
+        const alturaDaTela = tela.height();
+        const larguraDoQuadrado = $(quadrado).width();
+        const alturaDoQuadrado = $(quadrado).height();
+        const novoX = (larguraDaTela - larguraDoQuadrado) / 2.5;
+        const novoY = (alturaDaTela - alturaDoQuadrado) / 3;
+
+        $(quadrado).css({
+            transform: `translate(${novoX}px, ${novoY}px)`,
+            border: "5px solid yellow"
+        });
+    }
+
+    $(document).on("keydown", function (event) {
+        if (quadradoSelecionado && quadradoEmMovimento) {
+            const tecla = event.key.toLowerCase();
+            switch (tecla) {
+                case "w":
+                    moverQuadrado(0, -10);
+                    break;
+                case "a":
+                    moverQuadrado(-10, 0);
+                    break;
+                case "s":
+                    moverQuadrado(0, 10);
+                    break;
+                case "d":
+                    moverQuadrado(10, 0);
+                    break;
+            }
+        }
+    });
+
+    function moverQuadrado(deltaX, deltaY) {
+        const transformacao = getComputedStyle(quadradoSelecionado).transform;
+
+        let atualX = 0;
+        let atualY = 0;
+
+        if (transformacao !== "none") {
+            const matriz = new DOMMatrix(transformacao);
+            atualX = matriz.m41;
+            atualY = matriz.m42;
+        }
+
+        const novoX = atualX + deltaX;
+        const novoY = atualY + deltaY;
+
+        $(quadradoSelecionado).css({
+            transform: `translate(${novoX}px, ${novoY}px)`
+        });
+    }
+});
+</script>
+</body>
+</html>
